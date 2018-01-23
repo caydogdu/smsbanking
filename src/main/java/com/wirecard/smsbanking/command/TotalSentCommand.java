@@ -9,6 +9,12 @@ import org.slf4j.LoggerFactory;
 import com.wirecard.smsbanking.service.TransferManager;
 import com.wirecard.smsbanking.service.UserManager;
 
+/**
+ * 
+ * @author caydogdu
+ *
+ * This is command class to calculate total amounts of transfers
+ */
 public class TotalSentCommand implements Command {
 
 	private static final Logger logger = LoggerFactory.getLogger(TotalSentCommand.class);
@@ -20,7 +26,7 @@ public class TotalSentCommand implements Command {
 	@Override
 	public String execute(String[] parameters, String senderUsername) {
 		
-		logger.info("total sent request for " + senderUsername);
+		logger.info("Total sent request for " + senderUsername);
 		StringBuilder sb = new StringBuilder();
 		
 		for(int i = 2; i < parameters.length; i++){

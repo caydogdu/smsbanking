@@ -8,6 +8,12 @@ import org.slf4j.LoggerFactory;
 import com.wirecard.smsbanking.service.TransferManager;
 import com.wirecard.smsbanking.service.UserManager;
 
+/**
+ * 
+ * @author caydogdu
+ *
+ * This is command class to getting balance of customer
+ */
 public class GetBalanceCommand implements Command {
 
 	private static final Logger logger = LoggerFactory.getLogger(GetBalanceCommand.class);

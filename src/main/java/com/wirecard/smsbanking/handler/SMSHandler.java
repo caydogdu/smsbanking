@@ -1,5 +1,11 @@
 package com.wirecard.smsbanking.handler;
 
+/**
+ * 
+ * @author caydogdu
+ *
+ * This is interface for sms handling
+ */
 public interface SMSHandler {
 	/**
 	* @param smsContent the incoming SMS command string.

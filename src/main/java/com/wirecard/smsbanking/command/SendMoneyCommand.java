@@ -8,6 +8,12 @@ import org.slf4j.LoggerFactory;
 import com.wirecard.smsbanking.service.TransferManager;
 import com.wirecard.smsbanking.service.UserManager;
 
+/**
+ * 
+ * @author caydogdu
+ *
+ * This is command class to transfer money
+ */
 public class SendMoneyCommand implements Command {
 
 	private static final Logger logger = LoggerFactory.getLogger(SendMoneyCommand.class);
