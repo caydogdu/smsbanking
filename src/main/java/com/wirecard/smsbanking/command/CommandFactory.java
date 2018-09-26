@@ -4,27 +4,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 
+ *
  * @author caydogdu
  *
- * This is a factory class for creating command
- * If there is a new command class, it must be added to factories map
- * 
+ *         This is a factory class for creating command If there is a new command class, it must be added to factories
+ *         map
+ *
  */
 public class CommandFactory {
 
-	private static Map<String, Command> factories = new HashMap<String, Command>();
+    private static Map<String, Command> factories = new HashMap<>();
 
-	private CommandFactory() {
-	}
-
-    static{
+    static {
         factories.put("BALANCE", new GetBalanceCommand());
         factories.put("SEND", new SendMoneyCommand());
         factories.put("TOTAL", new TotalSentCommand());
     }
-	
-	public static Command getFactory(String factoryId) {
-		return factories.get(factoryId);
-	}
+
+    public static Command getFactory(String factoryId) {
+        return factories.get(factoryId);
+    }
+
+    private CommandFactory() {
+    }
 }

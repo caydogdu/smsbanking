@@ -9,36 +9,37 @@ import com.wirecard.smsbanking.service.TransferManager;
 import com.wirecard.smsbanking.service.UserManager;
 
 /**
- * 
+ *
  * @author caydogdu
  *
- * This is command class to getting balance of customer
+ *         This is command class to getting balance of customer
  */
 public class GetBalanceCommand implements Command {
 
-	private static final Logger logger = LoggerFactory.getLogger(GetBalanceCommand.class);
-	
-	private UserManager userManager;
-	
-	@Override
-	public String execute(String[] parameters, String senderUsername) {
-		
-		logger.info("Getting balance for " + senderUsername);
-		BigDecimal balance = userManager.getBalance(senderUsername);
-		
-		logger.info("Returning " + balance + " for balance of " + senderUsername);
-		
-		return String.valueOf(balance);
-		
-	}
+    private static final Logger logger = LoggerFactory.getLogger(GetBalanceCommand.class);
 
-	@Override
-	public void setUserManager(UserManager userManager) {
-		this.userManager = userManager;
-	}
+    private UserManager userManager;
 
-	@Override
-	public void setTransferManager(TransferManager transferManager) {
-	}
+    @Override
+    public String execute(String[] parameters, String senderUsername) {
+
+        BigDecimal balance = userManager.getBalance(senderUsername);
+        if (logger.isInfoEnabled()) {
+            logger.info(String.format("Returning %s for balance of %s", balance, senderUsername));
+        }
+
+        return String.valueOf(balance);
+
+    }
+
+    @Override
+    public void setTransferManager(TransferManager transferManager) {
+        // no need to implement
+    }
+
+    @Override
+    public void setUserManager(UserManager userManager) {
+        this.userManager = userManager;
+    }
 
 }
