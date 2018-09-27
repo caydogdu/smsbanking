@@ -7,11 +7,11 @@ These are the main abilities of project
 
     Ability to allow customers to perform simple operations on their account using their mobile phones
 
-This project was developed with spring boot. Java 8 is required. No database was used. Some interfaces (TransferManager, UserManager) do not have implementations so Mockito was used in unit tests.
+This project was developed with spring boot. Java 8 is required. No database was used. Some interfaces (**TransferManager**, **UserManager**) do not have implementations so **Mockito** was used in unit tests.
 
 ------------------------------------------------------------------
 
-Run options and deployment
+## Run options and deployment
 
 This project is a microservice. So you can easily run it.
 
